@@ -18,9 +18,30 @@ def read_root():
     return {"Hello": "World"}
 
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+@app.get("/rainfallstations")
+def rainfall_stations():
+    return {
+        "data": [
+            {
+                "latitude": -32.95,
+                "longitude": 151.7,
+                "stationName": "Location 1",
+                "stationID": 1,
+            },
+            {
+                "latitude": -32.96,
+                "longitude": 151.71,
+                "stationName": "Location 2",
+                "stationID": 1,
+            },
+            {
+                "latitude": -32.965,
+                "longitude": 151.705,
+                "stationName": "Location 3",
+                "stationID": 1,
+            },
+        ]
+    }
 
 
 @app.get("/weatherdata")
