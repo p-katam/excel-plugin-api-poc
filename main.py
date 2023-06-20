@@ -32,6 +32,14 @@ def rainfall_stations():
     return get_rainfall_stations()
 
 
-@app.get("/weatherdata")
-def weather_data():
-    return get_weather_data()
+@app.get("/weatherdata/{station_number}/{from_date}/{to_date}")
+def weather_data(station_number, from_date, to_date):
+    logging.info(
+        "rainfall data requested: #"
+        + station_number
+        + " from: "
+        + from_date
+        + " to: "
+        + to_date
+    )
+    return get_weather_data(station_number, from_date, to_date)

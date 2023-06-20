@@ -1,10 +1,6 @@
-from fastapi import APIRouter
 from database.dbc import execute_query
 
-router = APIRouter()
 
-
-@router.get("/rainfallstations")
 def get_rainfall_stations():
     # Execute the SQL query
     query = (
