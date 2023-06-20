@@ -4,7 +4,7 @@ from database.dbc import execute_query
 def get_rainfall_stations():
     # Execute the SQL query
     query = (
-        "SELECT station_number, station_name, latitude, longitude FROM weather_station"
+        "SELECT station_number, station_name, latitude, longitude FROM weather_stations"
     )
 
     try:
