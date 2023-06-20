@@ -1,17 +1,14 @@
-import logging
-import sys
 from fastapi import FastAPI, Response
 from fastapi.middleware.cors import CORSMiddleware
 
+import logging
+from logging_utils.logger import setup_logging
 from endpoints.rainfallstations import get_rainfall_stations
 from endpoints.weatherdata import get_weather_data
 
-# Configure the logging settings
-logging.basicConfig(
-    level=logging.DEBUG,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[logging.FileHandler("app.log"), logging.StreamHandler(sys.stdout)],
-)
+# Call setup_logging() to initialize the logging settings
+setup_logging()
+logging = logging.getLogger(__name__)
 
 app = FastAPI(title="Experimental API for fetching BOM data from Postgres")
 
