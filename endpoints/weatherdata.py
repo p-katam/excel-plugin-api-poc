@@ -53,7 +53,7 @@ def get_weather_data(station_number, from_date, to_date):
             weather_data.append(data_row)
 
         # Return the weather data
-        return {"data": weather_data}
+        return {"data": weather_data, "columns": columns}
 
     except Exception as e:
         print("An error occurred during query execution:")
